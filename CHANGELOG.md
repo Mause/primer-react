@@ -1,5 +1,60 @@
 # @primer/components
 
+## 36.0.0
+
+### Major Changes
+
+- [#2878](https://github.com/primer/react/pull/2878) [`87883c3f`](https://github.com/primer/react/commit/87883c3fd91a5d2809268aa0dd22b87b53ba5309) Thanks [@radglob](https://github.com/radglob)! - Update PRC ActionList implementation to have similar semantics to PVC.
+
+  - Removes `ActionList.Group`.
+  - Adds `ActionList.Heading` to be used for labelling children in an `ActionList`.
+  - Adds `heading` slot to `ActionList` for adding headings that label internal lists correctly.
+
+  ActionList.Groups inside an ActionList generated inaccessible markup. Previous usage:
+
+  ```
+  <ActionList>
+    <ActionList.Group title="Actions">
+      <ActionList.Item>Create</ActionList.Item>
+      <ActionList.Item>Read</ActionList.Item>
+      <ActionList.Item>Update</ActionList.Item>
+      <ActionList.Item>Delete</ActionList.Item>
+    </ActionList.Group>
+    <ActionList.Group>
+      ...
+    </ActionList.Group>
+  </ActionList>
+  ```
+
+  Instead, use `ActionList`s and stack them as needed.
+
+  ```
+  <div>
+    <ActionList>
+      <ActionList.Heading title="Actions" />
+      <ActionList.Item>Create</ActionList.Item>
+      <ActionList.Item>Read</ActionList.Item>
+      <ActionList.Item>Update</ActionList.Item>
+      <ActionList.Item>Delete</ActionList.Item>
+    </ActionList>
+    <ActionList>
+      ...
+    </ActionList>
+  </div>
+  ```
+
+### Minor Changes
+
+- [#3229](https://github.com/primer/react/pull/3229) [`c0cbdd08`](https://github.com/primer/react/commit/c0cbdd0806809236e681cab535b4a74ecdfcc14a) Thanks [@colebemis](https://github.com/colebemis)! - Add `minWidth prop to `PageLayout.Pane`and`SplitPageLayout.Pane`
+
+- [#3199](https://github.com/primer/react/pull/3199) [`bfd9e0c8`](https://github.com/primer/react/commit/bfd9e0c8ee3b6b335e04c5c1d4ca82cf23760877) Thanks [@joshblack](https://github.com/joshblack)! - Add support for Pagination in DataTable
+
+### Patch Changes
+
+- [#3207](https://github.com/primer/react/pull/3207) [`6773b90d`](https://github.com/primer/react/commit/6773b90d8ced05fae4ac9024e84cc31f1da9b9a3) Thanks [@colebemis](https://github.com/colebemis)! - `MarkdownViewer` is now SSR-compatible
+
+- [#3182](https://github.com/primer/react/pull/3182) [`7827c711`](https://github.com/primer/react/commit/7827c71163e4d964e9878d624cf4cf1694c7447d) Thanks [@green6erry](https://github.com/green6erry)! - Removed default aria-live polite
+
 ## 35.25.1
 
 ### Patch Changes
