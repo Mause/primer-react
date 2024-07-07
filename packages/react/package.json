@@ -3,6 +3,7 @@
   "version": "36.24.0",
   "description": "An implementation of GitHub's Primer Design System using React",
   "main": "lib/index.js",
+  "type": "module",
   "module": "lib-esm/index.js",
   "exports": {
     ".": {
